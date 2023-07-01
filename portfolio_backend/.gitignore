@@ -1,0 +1,41 @@
+# Virtual Environment
+venv/
+env/
+
+# IDE/Editor-specific
+.vscode/
+.idea/
+*.pyc
+.DS_Store
+
+# Log Files and Debugging Output
+*.log
+
+# Dependency Management
+*.lock
+pipenv.lock
+Pipfile.lock
+
+# Database Files
+db.sqlite3
+
+# Media and Static Files
+media/
+static/
+
+sample.py
+data.txt
+
+# Configuration Files
+.env
+.env.*
+
+# Temporary or Generated Files
+__pycache__/
+migrations/
+fixtures/
+*.pyo
+*.swp
+*.swo
+*.bak
+*.tmp
