@@ -30,15 +30,18 @@ class portfolioInfoAPI(APIView):
     permission_classes = [IsAuthenticated]
     def get(self, request):
         total_viewers = len(Viewers.objects.all())
+        print("few1")
         viewers_reachedEnd = len(Viewers.objects.filter(reached_bottom = True))
-
+        print("few2")
         total_likes = len(LikesModel.objects.filter(liked=True))
+        print("few3")
         total_dislikes = len(LikesModel.objects.filter(disliked=True))
-
+        print("few4")
         total_feedbacks = (Feedbacks.objects
                             .values('email')
                             .annotate(uniqueFeedbacks = Count('email'))
                             .order_by())
+        print("few5")
         return Response({
             "count": total_viewers, 
             "reached_bottom": viewers_reachedEnd,
