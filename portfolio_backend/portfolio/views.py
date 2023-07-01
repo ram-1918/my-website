@@ -30,26 +30,22 @@ class portfolioInfoAPI(APIView):
     permission_classes = [IsAuthenticated]
     def get(self, request):
         total_viewers = len(Viewers.objects.all())
-        print("few1")
         viewers_reachedEnd = len(Viewers.objects.filter(reached_bottom = True))
-        print("few2")
         total_likes = len(LikesModel.objects.filter(liked=True))
-        print("few3")
         total_dislikes = len(LikesModel.objects.filter(disliked=True))
-        print("few4")
         total_feedbacks = (Feedbacks.objects
                             .values('email')
                             .annotate(uniqueFeedbacks = Count('email'))
                             .order_by())
         print("few5")
-        # return Response({
-        #     "count": total_viewers, 
-        #     "reached_bottom": viewers_reachedEnd,
-        #     "likes_percent": (total_likes/(total_likes + total_dislikes))*100,
-        #     "feedbacks_percent":(len(total_feedbacks)/total_viewers)*100,
-        #     "feedback_info": total_feedbacks
-        #     })
-        return Response("worked")
+        return Response({
+            "count": total_viewers, 
+            "reached_bottom": viewers_reachedEnd,
+            "likes_percent": (total_likes/(total_likes + total_dislikes))*100 if total_likes and total_dislikes else 0,
+            "feedbacks_percent":(len(total_feedbacks)/total_viewers)*100 if total_viewers else 0,
+            "feedback_info": total_feedbacks
+            })
+        # return Response("worked")
 
 class createUser(generics.ListCreateAPIView):
     queryset = Viewers.objects.all()
