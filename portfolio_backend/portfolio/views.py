@@ -42,13 +42,14 @@ class portfolioInfoAPI(APIView):
                             .annotate(uniqueFeedbacks = Count('email'))
                             .order_by())
         print("few5")
-        return Response({
-            "count": total_viewers, 
-            "reached_bottom": viewers_reachedEnd,
-            "likes_percent": (total_likes/(total_likes + total_dislikes))*100,
-            "feedbacks_percent":(len(total_feedbacks)/total_viewers)*100,
-            "feedback_info": total_feedbacks
-            })
+        # return Response({
+        #     "count": total_viewers, 
+        #     "reached_bottom": viewers_reachedEnd,
+        #     "likes_percent": (total_likes/(total_likes + total_dislikes))*100,
+        #     "feedbacks_percent":(len(total_feedbacks)/total_viewers)*100,
+        #     "feedback_info": total_feedbacks
+        #     })
+        return Response("worked")
 
 class createUser(generics.ListCreateAPIView):
     queryset = Viewers.objects.all()
