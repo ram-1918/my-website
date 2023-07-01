@@ -37,7 +37,6 @@ class portfolioInfoAPI(APIView):
                             .values('email')
                             .annotate(uniqueFeedbacks = Count('email'))
                             .order_by())
-        print("few5")
         return Response({
             "count": total_viewers, 
             "reached_bottom": viewers_reachedEnd,
