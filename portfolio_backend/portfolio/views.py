@@ -66,7 +66,6 @@ class createUser(generics.ListCreateAPIView):
             serializer = ViewerSerializer(data = obj)
             serializer.is_valid(raise_exception=True)
             serializer.save()
-            print(request.data['data'])
             return Response(serializer.data, status = status.HTTP_201_CREATED)            
         
 class UpdateUser(generics.RetrieveUpdateDestroyAPIView):
@@ -79,7 +78,6 @@ class UpdateUser(generics.RetrieveUpdateDestroyAPIView):
             obj = Viewers.objects.get(pk = pk)
             obj.reached_bottom = True
             obj.save()
-            print(obj.reached_bottom)
             return Response({"result": True})
         elif request.data['type'] == 3:
             viewer = request.data['data']['viewer']
@@ -87,7 +85,6 @@ class UpdateUser(generics.RetrieveUpdateDestroyAPIView):
             obj.scroll_pos = request.data['data']['scroll_pos']
             obj.percent_scrolled = request.data['data']['percent_scrolled']
             obj.save()
-            print(obj.percent_scrolled)
             return Response("update screen_pos, percent_scrolled")
 
 class getLikes(generics.ListCreateAPIView):
