@@ -131,9 +131,10 @@ def FeedbackAPI(request):
     if request.method == 'POST':
         serializer = FeedbackSerializer(data = request.data) # serializing the request data 
         recruiter = request.data['recruiter']
+        msg = request.data['feedback']
         if serializer.is_valid():
             serializer.save()
-            send_email_verification(serializer['email'], recruiter)
+            send_email_verification(serializer['email'], recruiter, msg)
             return Response({"email":serializer['email'].value}, status = status.HTTP_201_CREATED)
         return Response(serializer.errors)
     else:
