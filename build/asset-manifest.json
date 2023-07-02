@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.77c70379.css",
-    "main.js": "/static/js/main.aa67770e.js",
+    "main.css": "/static/css/main.a44a6298.css",
+    "main.js": "/static/js/main.a77fd268.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
     "static/media/tutorflow.jpeg": "/static/media/tutorflow.ecc6fc54a6a23731e7c7.jpeg",
@@ -23,12 +23,12 @@
     "static/media/vuejs.svg": "/static/media/vuejs.0c97e313d781a6b074e5fdb359cc83f6.svg",
     "static/media/css.svg": "/static/media/css.315b8fdb9dbf75ae965b80bf368895cd.svg",
     "static/media/html.svg": "/static/media/html.0107c93943a8f415b5db64ebb0a9d12d.svg",
-    "main.77c70379.css.map": "/static/css/main.77c70379.css.map",
-    "main.aa67770e.js.map": "/static/js/main.aa67770e.js.map",
+    "main.a44a6298.css.map": "/static/css/main.a44a6298.css.map",
+    "main.a77fd268.js.map": "/static/js/main.a77fd268.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.77c70379.css",
-    "static/js/main.aa67770e.js"
+    "static/css/main.a44a6298.css",
+    "static/js/main.a77fd268.js"
   ]
 }
