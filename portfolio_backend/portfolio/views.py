@@ -32,7 +32,8 @@ class portfolioInfoAPI(APIView):
         total_viewers = len(Viewers.objects.all())
         viewers_reachedEnd = len(Viewers.objects.filter(reached_bottom = True))
         total_likes = len(LikesModel.objects.filter(liked=True))
-        total_dislikes = len(LikesModel.objects.filter(disliked=True))
+        total_likes_entry = len(LikesModel.objects.all())
+        # total_dislikes = len(LikesModel.objects.filter(disliked=True))
         total_feedbacks = (Feedbacks.objects
                             .values('email')
                             .annotate(uniqueFeedbacks = Count('email'))
@@ -40,7 +41,8 @@ class portfolioInfoAPI(APIView):
         return Response({
             "count": total_viewers, 
             "reached_bottom": viewers_reachedEnd,
-            "likes_percent": (total_likes/(total_likes + total_dislikes))*100 if total_likes and total_dislikes else 0,
+            "likes_percent": (total_likes/(total_likes_entry))*100 if total_likes_entry else 0,
+            # "likes_percent": (total_likes/(total_likes + total_dislikes))*100 if total_likes and total_dislikes else 0,
             "feedbacks_percent":(len(total_feedbacks)/total_viewers)*100 if total_viewers else 0,
             "feedback_info": total_feedbacks
             })
