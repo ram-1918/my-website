@@ -170,8 +170,4 @@ class FeedbackDeleteAPI(generics.RetrieveDestroyAPIView):
         "reached_bottom": false
     }
 }
-gunicorn --bind 0.0.0.0:8000 portfolio_backend.wsgi:application
-
-ssh -i ~/webdevs/backend/Projects.pem ubuntu@18.219.131.21
-
 '''
