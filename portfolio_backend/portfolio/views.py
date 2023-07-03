@@ -135,7 +135,7 @@ def FeedbackAPI(request):
         if serializer.is_valid():
             serializer.save()
             send_email_verification(serializer['email'], recruiter, msg)
-            print("succuss")
+            # print("succuss")
             return Response({"email":serializer['email'].value}, status = status.HTTP_201_CREATED)
         return Response(serializer.errors)
     else:
@@ -170,4 +170,8 @@ class FeedbackDeleteAPI(generics.RetrieveDestroyAPIView):
         "reached_bottom": false
     }
 }
+gunicorn --bind 0.0.0.0:8000 portfolio_backend.wsgi:application
+
+ssh -i ~/webdevs/backend/Projects.pem ubuntu@18.219.131.21
+
 '''

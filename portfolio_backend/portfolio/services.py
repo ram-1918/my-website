@@ -17,7 +17,7 @@ def send_email_verification(email, recruiter, msg):
             html_message=html_message, 
             fail_silently=False
         )
-        print("succuss em")
+        # print("succuss em")
         send_mail(
             subject, 
             message, 
@@ -26,6 +26,6 @@ def send_email_verification(email, recruiter, msg):
             html_message=html_message1, 
             fail_silently=False
         )
-        print('Email sent successfully!')
+        # print('Email sent successfully!')
     except Exception as e:
         print(f'Error sending email: {str(e)}')
