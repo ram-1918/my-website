@@ -17,6 +17,7 @@ def send_email_verification(email, recruiter, msg):
             html_message=html_message, 
             fail_silently=False
         )
+        print("succuss em")
         send_mail(
             subject, 
             message, 
