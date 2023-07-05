@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-from .models import Viewers, LikesModel, Feedbacks
-from .serializers import ViewerSerializer, LikeSerializer, FeedbackSerializer
+from .models import Viewers, LikesModel, Feedbacks, FeedbacksPree
+from .serializers import ViewerSerializer, LikeSerializer, FeedbackSerializer, FeedbackPreeSerializer
 
 from rest_framework import generics, status
 from rest_framework.response import Response
@@ -144,6 +144,23 @@ def FeedbackAPI(request):
         data = Feedbacks.objects.all()
         serializer = FeedbackSerializer(data, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+@api_view(['POST'])
+def FeedbackAPIPree(request):
+    if request.method == 'POST':
+        serializer = FeedbackPreeSerializer(data = request.data) # serializing the request data 
+        recruiter = request.data['recruiter']
+        msg = request.data['feedback']
+        if serializer.is_valid():
+            serializer.save()
+            send_email_verification(serializer['email'], recruiter, msg, 'preethamk.967@gmail.com')
+            print("succuss-pree")
+            return Response({"email":serializer['email'].value}, status = status.HTTP_201_CREATED)
+        return Response(serializer.errors)
+    else:
+        data = FeedbacksPree.objects.all()
+        serializer = FeedbackPreeSerializer(data, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 class FeedbackDeleteAPI(generics.RetrieveDestroyAPIView):
     queryset = Feedbacks.objects.all()
@@ -151,6 +168,8 @@ class FeedbackDeleteAPI(generics.RetrieveDestroyAPIView):
 
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
+
+
 '''
 {
     "type": 1,

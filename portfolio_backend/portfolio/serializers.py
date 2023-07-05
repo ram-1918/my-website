@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Viewers, LikesModel, Feedbacks
+from .models import Viewers, LikesModel, Feedbacks, FeedbacksPree
 
 class ViewerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,4 +15,9 @@ class LikeSerializer(serializers.ModelSerializer):
 class FeedbackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Feedbacks
+        fields = '__all__'
+
+class FeedbackPreeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FeedbacksPree
         fields = '__all__'

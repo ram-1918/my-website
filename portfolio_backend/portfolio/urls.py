@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import portfolioInfoAPI, createUser, UpdateUser, getLikes, updateLike, FeedbackAPI, FeedbackDeleteAPI
+from .views import portfolioInfoAPI, createUser, UpdateUser, getLikes, updateLike, FeedbackAPI, FeedbackDeleteAPI, FeedbackAPIPree
 
 urlpatterns = [
     path('get-info/', portfolioInfoAPI.as_view()),
@@ -8,6 +8,7 @@ urlpatterns = [
     path('get-likes/', getLikes.as_view()),
     path('update-like/', updateLike.as_view()),
     path('post-feedback/', FeedbackAPI),
+    path('post-feedback-pree/', FeedbackAPIPree),
     path('update-feedback/', FeedbackDeleteAPI.as_view())
 ]
 

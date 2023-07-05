@@ -81,3 +81,16 @@ class Feedbacks(models.Model):
     
     class meta:
         verbose_name = "Feedbacks"
+    
+
+class FeedbacksPree(models.Model):
+    email = models.CharField(max_length=255)
+    feedback = models.CharField(max_length=255)
+    recruiter = models.BooleanField(default=False)
+    date_created = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.email
+    
+    class meta:
+        verbose_name = "FeedbacksPree"

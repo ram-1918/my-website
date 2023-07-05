@@ -3,8 +3,9 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 
-def send_email_verification(email, recruiter, msg):
-    html_message = render_to_string('feedback.html', {"email": email.value}) if not recruiter else render_to_string('recruiter.html', {"email": email.value})
+def send_email_verification(email, recruiter, msg, sender='rcb.26498@gmail.com'):
+    phone = '+17166171918' if sender == 'rcb.26498@gmail.com' else '+17168089656'
+    html_message = render_to_string('feedback.html', {"email": email.value, "sender":sender, "senderPH":phone}) if not recruiter else render_to_string('recruiter.html', {"email": email.value})
     html_message1 = render_to_string('feedback1.html', {"email": email.value, "msg": msg})
     subject = 'Thanks for your feedback!'
     message = 'Thank you for the feedback!'
@@ -12,7 +13,7 @@ def send_email_verification(email, recruiter, msg):
         send_mail(
             subject, 
             message, 
-            from_email=settings.EMAIL_HOST_USER, 
+            from_email=settings.EMAIL_HOST_USER if sender == 'rcb.26498@gmail.com' else 'preethamk.967@gmail.com', 
             recipient_list=[email.value], 
             html_message=html_message, 
             fail_silently=False
@@ -21,8 +22,8 @@ def send_email_verification(email, recruiter, msg):
         send_mail(
             subject, 
             message, 
-            from_email=settings.EMAIL_HOST_USER, 
-            recipient_list=['rcb.26498@gmail.com'], 
+            from_email=settings.EMAIL_HOST_USER if sender == 'rcb.26498@gmail.com' else 'preethamk.967@gmail.com', 
+            recipient_list= [sender], # ['rcb.26498@gmail.com'], 
             html_message=html_message1, 
             fail_silently=False
         )
