@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.f000c27b.css",
-    "main.js": "/static/js/main.11cbfda8.js",
+    "main.js": "/static/js/main.d5970c93.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/pf2.png": "/static/media/pf2.43d322816e7304d66c31.png",
     "static/media/tf6.png": "/static/media/tf6.aa38287d20ea8a580dec.png",
@@ -27,7 +27,7 @@
     "static/media/music1.png": "/static/media/music1.9196a9c6ff2afe3e51b2.png",
     "static/media/music2.png": "/static/media/music2.9196a9c6ff2afe3e51b2.png",
     "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.e033a13ee751afc1860c.woff2",
-    "static/media/Ramchandra_resume.pdf": "/static/media/Ramchandra_resume.6d7ef5cd225be8de7342.pdf",
+    "static/media/Ramchandra_Resume.pdf": "/static/media/Ramchandra_Resume.0334fd798aab7f2b484f.pdf",
     "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.d87474231f4192884802.ttf",
     "static/media/todos7.png": "/static/media/todos7.ddf8bbe3d9235756de3e.png",
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.3223dc79c1adee56370b.woff2",
@@ -45,11 +45,11 @@
     "static/media/css.svg": "/static/media/css.315b8fdb9dbf75ae965b80bf368895cd.svg",
     "static/media/html.svg": "/static/media/html.0107c93943a8f415b5db64ebb0a9d12d.svg",
     "main.f000c27b.css.map": "/static/css/main.f000c27b.css.map",
-    "main.11cbfda8.js.map": "/static/js/main.11cbfda8.js.map",
+    "main.d5970c93.js.map": "/static/js/main.d5970c93.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f000c27b.css",
-    "static/js/main.11cbfda8.js"
+    "static/js/main.d5970c93.js"
   ]
 }
