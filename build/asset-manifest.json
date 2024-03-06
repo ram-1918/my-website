@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c4fffbf8.css",
-    "main.js": "/static/js/main.4315398b.js",
+    "main.css": "/static/css/main.351b8a89.css",
+    "main.js": "/static/js/main.e55f10de.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/firstpage1.jpg": "/static/media/firstpage1.5f44bd044ec558892286.jpg",
     "static/media/pf2.png": "/static/media/pf2.43d322816e7304d66c31.png",
@@ -19,18 +19,19 @@
     "static/media/todos2.png": "/static/media/todos2.e9fb9d89ffecd7dcf8d8.png",
     "static/media/todos5.png": "/static/media/todos5.6adcb491ebfc40db4198.png",
     "static/media/pf3.png": "/static/media/pf3.9a10138ce66c9dd92cf0.png",
+    "static/media/me3.webp": "/static/media/me3.c4202918ca9d06cc0c65.webp",
     "static/media/todos4.png": "/static/media/todos4.8441842c7f8d25a5f0cf.png",
     "static/media/Ramchandra_Bhavirisetty_Resume.pdf": "/static/media/Ramchandra_Bhavirisetty_Resume.40dcb6662070bdc42f8a.pdf",
     "static/media/todos3.png": "/static/media/todos3.fa2af430814101c2b88d.png",
     "static/media/music3.png": "/static/media/music3.3a20ac0665f55b827ed4.png",
     "static/media/music1.png": "/static/media/music1.9196a9c6ff2afe3e51b2.png",
     "static/media/music2.png": "/static/media/music2.9196a9c6ff2afe3e51b2.png",
+    "static/media/bg_design4.jpeg": "/static/media/bg_design4.77542a6a572afbc2924e.jpeg",
     "static/media/gin.svg": "/static/media/gin.44129ee5af2a58307b2cd4377f36231d.svg",
     "static/media/todos7.png": "/static/media/todos7.ddf8bbe3d9235756de3e.png",
     "static/media/drf.svg": "/static/media/drf.2c91738a516709ac59c8bd8686db1c8a.svg",
     "static/media/jenkins.svg": "/static/media/jenkins.8fc39ea6b02ba7d66d7ad0e152e6bdcd.svg",
     "static/media/flask.svg": "/static/media/flask.ec547b9c35a6563b1cadca8e32d5aaf0.svg",
-    "static/media/mylogo.jpeg": "/static/media/mylogo.14ac669f67ecd56ddf1f.jpeg",
     "static/media/postgresql.svg": "/static/media/postgresql.9aed68683d15cfc3c3fd8ddf1d89ff4e.svg",
     "static/media/react.svg": "/static/media/react.f41f8fcbf0772f16ec57b3db64ba0b9f.svg",
     "static/media/docker.svg": "/static/media/docker.89d54b1cc04682a57639c1ffa8aff06b.svg",
@@ -49,12 +50,12 @@
     "static/media/css.svg": "/static/media/css.315b8fdb9dbf75ae965b80bf368895cd.svg",
     "static/media/html.svg": "/static/media/html.0107c93943a8f415b5db64ebb0a9d12d.svg",
     "static/media/externallink.svg": "/static/media/externallink.3e93bb40820fac8135b8a2c9cd00dfae.svg",
-    "main.c4fffbf8.css.map": "/static/css/main.c4fffbf8.css.map",
-    "main.4315398b.js.map": "/static/js/main.4315398b.js.map",
+    "main.351b8a89.css.map": "/static/css/main.351b8a89.css.map",
+    "main.e55f10de.js.map": "/static/js/main.e55f10de.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4fffbf8.css",
-    "static/js/main.4315398b.js"
+    "static/css/main.351b8a89.css",
+    "static/js/main.e55f10de.js"
   ]
 }
