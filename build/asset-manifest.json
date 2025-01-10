@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.5545bf63.css",
-    "main.js": "/static/js/main.9d944624.js",
+    "main.js": "/static/js/main.e2b9bd3e.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/firstpage1.jpg": "/static/media/firstpage1.5f44bd044ec558892286.jpg",
     "static/media/pf2.png": "/static/media/pf2.43d322816e7304d66c31.png",
@@ -26,7 +26,7 @@
     "static/media/music1.png": "/static/media/music1.9196a9c6ff2afe3e51b2.png",
     "static/media/music2.png": "/static/media/music2.9196a9c6ff2afe3e51b2.png",
     "static/media/bg_design4.jpeg": "/static/media/bg_design4.77542a6a572afbc2924e.jpeg",
-    "static/media/Ram_Chandra_Bhavirisetty.pdf": "/static/media/Ram_Chandra_Bhavirisetty.27b41470d9bb22380cc8.pdf",
+    "static/media/Ram_Chandra_Bhavirisetty.pdf": "/static/media/Ram_Chandra_Bhavirisetty.ade78d712cc2f5d9f8a5.pdf",
     "static/media/gin.svg": "/static/media/gin.44129ee5af2a58307b2cd4377f36231d.svg",
     "static/media/todos7.png": "/static/media/todos7.ddf8bbe3d9235756de3e.png",
     "static/media/drf.svg": "/static/media/drf.2c91738a516709ac59c8bd8686db1c8a.svg",
@@ -51,11 +51,11 @@
     "static/media/html.svg": "/static/media/html.0107c93943a8f415b5db64ebb0a9d12d.svg",
     "static/media/externallink.svg": "/static/media/externallink.3e93bb40820fac8135b8a2c9cd00dfae.svg",
     "main.5545bf63.css.map": "/static/css/main.5545bf63.css.map",
-    "main.9d944624.js.map": "/static/js/main.9d944624.js.map",
+    "main.e2b9bd3e.js.map": "/static/js/main.e2b9bd3e.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5545bf63.css",
-    "static/js/main.9d944624.js"
+    "static/js/main.e2b9bd3e.js"
   ]
 }
