@@ -63,7 +63,7 @@ const AcademicDiv = ({...props}) => {
 const SubHead = ({title}) => {
     const icon = title === "Education" ? <FontAwesomeIcon icon={faBookBookmark} /> : <FontAwesomeIcon icon={faBriefcase} />;
     return (
-        <div className="w-full text-center pb-10">
+        <div className="w-full pb-10 text-center">
             <span className="text-3xl font-normal tracking-wider ">{icon} {title}</span>
         </div>
     );
@@ -71,7 +71,6 @@ const SubHead = ({title}) => {
 
 const DesktopView = ({text, data, title}) => {
     const {dark} = useContext(modeContext);
-    const afterStyles = `after:content-[''] after:absolute after:right-0 after:p-[7px] ${dark ? 'after:border-gray-400': 'after:border-cyan-500'} after:border-t-2 after:border-r-2  after:rotate-45`
     return (
         <div className='flex flex-col h-full p-2 transition duration-700 mobile:hidden'>
             <div className={`${dark && 'text-[#D1D2D3]'} w-[80%] h-full flex flex-col justify-start items-center mx-auto rounded-xl  p-10 ${dark ? 'shadow-3xl shadow-slate-800 bg-slate-900' : 'bg-white shadow-3xl'} z-10`}>

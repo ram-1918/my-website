@@ -12,7 +12,6 @@ const ClickableLink = ({children, link}) => (
 )
 
 const ProjectsListDiv = ({...props}) => {
-    const {dark} = useContext(modeContext);
     return (
         <div className={`w-[70%] h-full mt-10 p-2 z-10 mobile:w-full space-y-8`}>
             {projectsData.map((obj, index) => <ProjectDiv key={index} obj={obj} index={index} {...props} />)}
@@ -30,8 +29,8 @@ const ImageSliderDiv = ({obj}) => (
 
 const DiscriptionDiv = ({obj}) => (
     <div>
-        <div className="text-xs uppercase font-bold">{obj.eyebrow}</div>
-        <div className="font-bold text-slate-700 leading-snug">
+        <div className="text-xs font-bold uppercase">{obj.eyebrow}</div>
+        <div className="font-bold leading-snug text-slate-700">
             <ClickableLink href={obj.link}>
                 {obj.title}
             </ClickableLink>
@@ -43,14 +42,14 @@ const DiscriptionDiv = ({obj}) => (
 const ListIconsDiv = ({obj, dark, text}) => (
     <div className={` w-full py-2 mt-4 overflow-x-scroll overscroll-contain`}>
         {/* <TechStackTitle text={text} dark={dark} /> */}
-        <div className="flex flex-row justify-start items-center space-x-5 py-2">
+        <div className="flex flex-row items-center justify-start py-2 space-x-5">
             {obj.tech.map((icon, idx) => <span key={idx}>{icon}</span>)}
         </div>
     </div>
 );
 
 const ReferenceLinkDiv = ({obj, text}) => (
-    <div className="flex flex-row items-center space-x-4 mt-2">
+    <div className="flex flex-row items-center mt-2 space-x-4">
         <ClickableLink link={obj.gitlink} text={text}>
             <GithubIcon />
         </ClickableLink>

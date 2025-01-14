@@ -2,10 +2,9 @@ import React from "react";
 
 import { CSSIcon, DjangoIcon, HTMLIcon, JSIcon, PythonIcon, ReactIcon, SQLIcon, TailwindIcon, VueIcon } from "./Base/BaseIcons";
 
+// import dell from '../icons/dell.jpeg';
 import ubicon from '../icons/ub.jpeg';
 import annauniv from '../icons/annauniv.jpeg';
-// import dell from '../icons/dell.jpeg';
-import cloud from '../icons/cloudserv.jpeg';
 import kellogg from '../icons/kellogg_company_logo.jpeg';
 import goldman from '../icons/goldman_sachs_logo.jpeg';
 import eidiko from '../icons/eidiko.jpeg';

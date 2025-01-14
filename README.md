@@ -13,7 +13,6 @@ This repository contains the code for my personal portfolio website. It showcase
 - Future Plan: Transition to a lightweight backend using **Flask** or **Gin** for improved performance.
 
 ## Features
-- **Dynamic Contact Section**: Allows visitors to send messages directly.
 - **Visitor Counter**: Tracks and displays the number of visits.
 - **Modern UI/UX**: A sleek and interactive design for better engagement.
 

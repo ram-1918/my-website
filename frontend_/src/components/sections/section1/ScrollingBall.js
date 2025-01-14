@@ -17,14 +17,11 @@ export default function ScrollingBall({
   let percentScrolled = Math.floor(
     ((totalScrollHeight - currScrollPos) / totalScrollHeight) * 100
   );
-  let widthScrollPercent = 100 + fraction - percentScrolled + "%";
-
+  
+  let widthScrollPercent = 99.5 + fraction - percentScrolled + "%";
   const {setIsScrollDown} = useContext(modeContext);
-
   const [isScrolling, setIsScrolling] = useState("");
-
   const {dark} = useContext(modeContext);
-
 
   useEffect(() => {
     let timeoutId;
@@ -59,7 +56,7 @@ export default function ScrollingBall({
       window.removeEventListener("scroll", onScroll);
       clearTimeout(timeoutId);
     };
-  }, []);
+  }, [display, prevPos, setIsScrollDown, setOffset]);
 
   const rollingClass = `text-right ${isScrolling} ${dark ? 'text-white' : 'text-black'}`;
   return (

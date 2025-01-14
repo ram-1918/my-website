@@ -1,4 +1,4 @@
-import { faArrowAltCircleLeft, faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 // import { SliderData } from './SliderData';
@@ -21,7 +21,7 @@ const ImageSlider = ({ slides }) => {
   }
 
   return (
-    <section className='group/image relative flex flex-col justify-center items-center'>
+    <section className='relative flex flex-col items-center justify-center group/image'>
       {slides.map((slide, index) => {
         return (
           <div

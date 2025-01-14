@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
-import { useState, useEffect, useRef, useContext } from "react";
+import { useState, useRef, useContext } from "react";
 import NameAsTitle from "../../components/sections/section1/NameAsTitle";
-import NavButtons, { ResumeDownload } from "../../components/sections/section1/NavbarButtons";
+import NavButtons, { ResumeDownload, ViewCountDisplay } from "../../components/sections/section1/NavbarButtons";
 import ScrollingBall from "../../components/sections/section1/ScrollingBall";
 import ThemeButon from "../../components/sections/section1/ThemeButton";
 import { modeContext } from "../../Home";
+import { useRecoilValue } from "recoil";
+import { totalViewsAtom } from "../../App";
 
 function Topnav() {
-  const {dark, bgColor} = useContext(modeContext);
+  const {dark} = useContext(modeContext);
 
   const [offset, setOffset] = useState(0);
   let display = useRef(0);
@@ -44,15 +46,16 @@ function Topnav() {
 }
 
 const TopnavMobileView = ({ ...props }) => {
-  const {dark} = useContext(modeContext);
+  const totalViews = useRecoilValue(totalViewsAtom);
   return (
     <>
       <div
         className={`flex flex-row justify-between items-center w-full space-x-4 pl-2 pr-2`}
       >
         <NameAsTitle dark={props.dark} />
-        <span className="flex flex-row justify-between items-center space-x-4">
+        <span className="flex flex-row items-center justify-between space-x-4">
           <ThemeButon {...props} />
+          <ViewCountDisplay count={totalViews} />
           <ResumeDownload />
         </span>
       </div>
@@ -65,7 +68,7 @@ const TopnavMobileView = ({ ...props }) => {
 const TopnavDesktopView = ({ ...screenProps }) => {
   return (
     <>
-      <div className="flex flex-row w-full justify-between items-center place-items-center space-x-5 px-20 py-2">
+      <div className="flex flex-row items-center justify-between w-full px-20 py-2 space-x-5 place-items-center">
         <NameAsTitle />
         <NavButtons />
       </div>

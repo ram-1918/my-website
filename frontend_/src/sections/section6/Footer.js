@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faEnvelope, faHomeLg, faMobilePhone } from '@fortawesome/free-solid-svg-icons';
 import BaseNavigateOut from '../../components/Base/BaseNavigateOut';
-import medium from "../../icons/medium.svg";
 import BaseCopyrights from '../../components/Base/BaseCopyrights';
+// import medium from "../../icons/medium.svg";
 
 const ContactHeader = ({text}) => {
     return (
@@ -38,7 +38,7 @@ const MyInfo = () => {
     );
 };
 
-const mediumIcon = <img src={medium} alt="logo" width="30" height="30" className='bg-white rounded-lg'></img>
+// const mediumIcon = <img src={medium} alt="logo" width="30" height="30" className='bg-white rounded-lg'></img>
 
 
 

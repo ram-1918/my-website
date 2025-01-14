@@ -1,8 +1,7 @@
 import { NormalSpanText, StyledSpanText } from "./Spans";
 
 export const AboutTextFT = ({ dark }) => {
-  let text,
-    textTitle = "";
+  let text, textTitle = "";
 
   if (dark) {
     text = "#D1D2D3";
@@ -34,12 +33,10 @@ export const AboutTextFT = ({ dark }) => {
 };
 
 export const AboutTextMarketing = ({ dark }) => {
-  let text,
-    textTitle = "";
+  let text = "";
 
   if (dark) {
     text = "#D1D2D3";
-    textTitle = "#9DB2BF";
   }
   return (
     <span
@@ -50,9 +47,3 @@ export const AboutTextMarketing = ({ dark }) => {
     </span>
   );
 };
-
-{/* <StyledSpanText textTitle={textTitle} text="Python/Go developer" />
-<NormalSpanText text="with passion for building user-friendly apps. Leverage data science skills (MSc)" />
-<NormalSpanText text=" for data-driven solutions. Detail-oriented, high-quality delivery." />
-<StyledSpanText textTitle={textTitle} text="Ready to contribute" />
-<NormalSpanText text=" to your team." /> */}

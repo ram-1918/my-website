@@ -1,29 +1,21 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import Topnav from "./sections/section1/Topnav";
-
-import Projects from "./sections/section3/Projects";
-import Academic from "./sections/section4/Academic";
-
-import BaseCopyrights from "./components/Base/BaseCopyrights";
-// import FooterDiv from "./sections/section6/FooterDiv";
-import AboutDiv from "./components/home/AboutDiv";
 import { createContext } from "react";
+
+import Topnav from "./sections/section1/Topnav";
+import AboutDiv from "./components/home/AboutDiv";
+import Academic from "./sections/section4/Academic";
+import Projects from "./sections/section3/Projects";
 import Achievements from "./sections/section5/Achievements";
 import Footer from "./sections/section6/Footer";
-import FirstPage from "./FirstPage";
+
+// import FooterDiv from "./sections/section6/FooterDiv";
 
 /**
  * Follow: typography choices, color palettes, and spacing guidelines
  */
 
 export const modeContext = createContext();
-
-// const apiurl = "https://www.ramchandra.info/portfolio/";
-const apiurl = "http://127.0.0.1:8000/port-api/";
-const authorization = {
-  auth: { username: "ubuntu123", password: "portfolio" },
-};
 
 function Home() {
   const [dark, setDark] = useState(
@@ -34,11 +26,6 @@ function Home() {
 
   const [isScrollDown, setIsScrollDown] = useState(false);
 
-  // const modeProps = {
-  //   dark: dark,
-  //   setDark: setDark,
-  //   bgColor: bg
-  // };
   const props = { 
     dark: dark, 
     setDark: setDark, 
@@ -46,11 +33,6 @@ function Home() {
     isScrollDown: isScrollDown,
     bgColor: bg
   }
-
-  const authProps = {
-    apiurl: apiurl,
-    auth: authorization,
-  };
 
   useEffect(() => {
     window.scrollTo({
@@ -75,9 +57,7 @@ function Home() {
     <>
       <Outlet />
       <modeContext.Provider value={props}>
-        <div
-          className={`${bg} w-full h-full flex flex-col font-[sans-serif] transition-all`}
-        >
+        <div className={`${bg} w-full h-full flex flex-col font-[sans-serif] transition-all`} >
           <Topnav />
           <AboutDiv />
           <Projects />

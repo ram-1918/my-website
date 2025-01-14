@@ -19,7 +19,7 @@ const ThemeButon = () => {
       onClick={() => handleMode(setDark)}
       className={`${dark && 'text-white'} text-md font-light border-none hover:opacity-70 py-2`}
     >
-      Theme <ThemeIconBasedOnMode dark={dark} />
+      <ThemeIconBasedOnMode dark={dark} />
     </button>
   );
 };
