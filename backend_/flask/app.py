@@ -22,10 +22,11 @@ def init_db():
 init_db()
 
 # Endpoint to track views
-# http://127.0.0.1:5000/track-view?userId=some-unique-userid
+# http://127.0.0.1:5000/track-view
 @app.route('/track-view', methods=['POST'])
 def track_view():
     data = request.json
+    # print(data)
     user_id = data.get('userId')
 
     if not user_id:

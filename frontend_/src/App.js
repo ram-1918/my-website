@@ -12,6 +12,8 @@ export const totalViewsAtom = atom({
 });
 
 const API_URL = "https://my-website-crbf.onrender.com";
+// const API_URL = "http://127.0.0.1:5001";
+
 const generateUniqueId = () => `user-${Math.random().toString(36).slice(2)}`;
 
 function App(){
@@ -20,12 +22,12 @@ function App(){
   // geenrate unique id + makes api call to track view + get total views
   useEffect(() => {
     let userId = localStorage.getItem('userId');
-
-    if (userId === 'null') {
+    // console.log('UserID', userId);
+    if (userId === null) {
       userId = generateUniqueId();
       localStorage.setItem("userId", userId);
     }
-    axios.post(`${API_URL}/track-view`, {"userId": userId})
+    axios.post(`${API_URL}/track-view`, { "userId": userId })
     .then(() => console.log("View tracked!"))
     .catch(() => console.log("Error occured!"))
 
