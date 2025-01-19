@@ -16,20 +16,17 @@ const TitleSpan = ({text, name}) => {
 const DescriptionSpan = ({textContent, content}) => (
         <span 
         style={{color: textContent}} 
-        className="
-        w-96 text-center text-md font-light font-sans tracking-wider leading-6
-        mobile:w-fit mobile:px-2
-        ">
+        className="font-sans font-light leading-6 tracking-wider text-center w-96 text-md mobile:w-fit mobile:px-2">
             {content}
         </span>
     );
 
 // const Header = () => (
-//     <div className="sticky top-0 left-0 right-0 flex flex-col justify-center items-center space-y-2">
-//       <span className="text-3xl font-normal font-sans">
+//     <div className="sticky top-0 left-0 right-0 flex flex-col items-center justify-center space-y-2">
+//       <span className="font-sans text-3xl font-normal">
 //         Academics & Experience
 //       </span>
-//       <span className="w-72 text-wrap text-center text-md font-light font-sans tracking-wide leading-6">
+//       <span className="font-sans font-light leading-6 tracking-wide text-center w-72 text-wrap text-md">
 //         These can showcase my Enthusiasm for learning and leveling up skills based
 //         on current trends
 //       </span>
@@ -48,9 +45,9 @@ function Header({name, content}){
     const nameSpanner = name === "Projects" ? name : "Experience"
     return (
             <div className="
-            w-full h-full flex flex-row justify-center items-center
+            w-full h-full flex flex-row justify-center items-center mx-auto
             small:w-full
-            mobile:w-full flex flex-row justify-center items-center mx-auto
+            mobile:w-full 
             tablet:w-[40%]">
                 <div className="
                 w-[35%] flex flex-col items-center space-y-0 
@@ -59,13 +56,10 @@ function Header({name, content}){
                     <TitleSpan text={text} name={name} />
                     <DescriptionSpan textContent={textContent} content={content} />
                 </div>
-                <div className="
-                    bg-red-400 flex flex-col justify-start 
-                    mobile:hidden
-                    table:hidden" >
+                <div className="flex flex-col justify-start bg-red-400 mobile:hidden table:hidden" >
                     <div className={`
-                    ${name === 'Academics & Experience' && dark ? 'text-gray-400' : 'text-cyan-800'} 
-                    ${name === 'Projects' && (dark ? 'text-gray-400': 'text-teal-800')} 
+                    ${name === 'Academics & Experience' && dark ? 'text-gray-400' : 'text-purple-600'} 
+                    ${name === 'Projects' && (dark ? 'text-gray-400': 'text-purple-600')} 
                     flex flex-col justify-center items-center absolute top-0 mt-0 pt-0 pr-0 right-20 p-0 z-10 text-[3rem] 
                     `}>
                         <FontAwesomeIcon icon={name === 'Academics & Experience' ? faBookmark : faBookmark} />

@@ -4,7 +4,7 @@ import Skills from "../../sections/section2/Skills";
 const AboutDiv = () => (
     <div id="about" 
     className="
-    h-[100vh] w-full mx-auto
+    h-[100vh] w-full mx-auto z-10
     mobile:h-fit mobile:flex mobile:flex-col mobile:justify-start
     ">
         <About />

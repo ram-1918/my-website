@@ -16,7 +16,8 @@ module.exports = {
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
-      dance: ['Dancing Script', 'cursive']
+      dance: ['Dancing Script', 'cursive'],
+      kranky: ['Kranky', 'serif']
     },
     extend: {
       spacing: {
@@ -44,11 +45,20 @@ module.exports = {
           'to': {
             transform: 'rotate(0deg)'
           }
+        },
+        scroll: {
+          '0%': {
+            transform: 'translateX(0%)'
+          },
+          '100%': {
+            transform: 'translateX(calc(-50% - 15px))'
+          }
         }
       },
       animation: {
         mymove: 'mymove 1s infinite',
         spinreverse: 'spinreverse 1s linear infinite',
+        "infinite-scroll": 'scroll 15s linear infinite'
       },
       transitionProperty: {
         'height': 'height',

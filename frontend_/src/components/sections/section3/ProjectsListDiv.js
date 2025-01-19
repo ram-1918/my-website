@@ -1,9 +1,11 @@
 import {motion} from "framer-motion";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { modeContext } from "../../../Home";
 import { ExternalLinkIcon, GithubIcon } from "../../Base/BaseIcons";
 import { projectsData } from "../../data";
 import ImageSlider from '../../ImageSlider';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight, faCircle, faCircleDot, faDotCircle } from "@fortawesome/free-solid-svg-icons";
 
 const ClickableLink = ({children, link}) => (
     <a target='_blank' rel='noopener noreferrer' href={link} className="hover:underline">
@@ -11,10 +13,68 @@ const ClickableLink = ({children, link}) => (
     </a>
 )
 
+const ButtonStyles = "text-purple-600 cursor-pointer hover:scale-125 transition ease-linear text-xl";
+
+const LeftIcon = () => <FontAwesomeIcon icon={faArrowLeft} />;
+const RightIcon = () => <FontAwesomeIcon icon={faArrowRight} />;
+const CircleIcon = ({isSelected=false}) => (
+    <div className="flex items-center justify-center w-4 h-4 transition ease-linear border border-purple-600 rounded-lg cursor-pointer hover:scale-125">
+        {
+            isSelected && 
+            <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+        }
+    </div>
+);
+
+const PrevButton = ({setProjectId}) => (
+    <span 
+    className={ButtonStyles}
+    onClick={
+        () => setProjectId(
+            prev => {
+                let curr = prev;
+                if (curr == 0) {
+                    curr = projectsData.length;
+                }
+                return curr - 1;
+            }
+        )
+    }><LeftIcon /></span>
+)
+
+const NextButton = ({setProjectId}) => (
+    <span 
+    className={ButtonStyles}
+    onClick={
+        () => setProjectId(
+            prev => {
+                let curr = prev;
+                if (curr == projectsData.length - 1) {
+                    curr = 0;
+                }
+                return curr + 1;
+            }
+        )
+    }><RightIcon /></span>
+)
+
+const CircularButtons = ({setProjectId, current}) => (
+    <span className="flex gap-2">
+        {projectsData.map((_, idx) => <span onClick={() => setProjectId(idx)}><CircleIcon isSelected={current === idx} /></span>)}
+    </span>
+)
+
+{/* {projectsData.map((obj, index) => <ProjectDiv key={index} obj={obj} index={index} {...props} />)} */}
 const ProjectsListDiv = ({...props}) => {
+    const [projectId, setProjectId] = useState(0);
     return (
-        <div className={`w-[70%] h-full mt-10 p-2 z-10 mobile:w-full space-y-8`}>
-            {projectsData.map((obj, index) => <ProjectDiv key={index} obj={obj} index={index} {...props} />)}
+        <div className={`relative w-[70%] h-full flex flex-col justify-center items-center mt-10 p-2 z-10 mobile:w-full space-y-2`}>
+            <ProjectDiv key={projectId} obj={projectsData[projectId]} index={projectId} {...props} />
+            <div className="flex items-center justify-between w-full px-4">
+                <PrevButton setProjectId={setProjectId} />
+                <CircularButtons setProjectId={setProjectId} current={projectId} />
+                <NextButton setProjectId={setProjectId} />
+            </div>
         </div>
     )
 };
@@ -65,11 +125,16 @@ const ReferenceLinkDiv = ({obj, text}) => (
 const ProjectDiv = ({obj, index, text, bg}) => {
     const {dark} = useContext(modeContext);
     return (
-        <motion.div key={index}  initial={{opacity: 0.75, y:100 }} whileInView={{ opacity:1, y:0  }} transition={{duration:1}} animate={{x:[-100, 0]}} // ${dark ? 'bg-[#B6BBC4]' : ''}
+        <motion.div 
+        key={index}  
+        // initial={{opacity: 0.75 }} 
+        // whileInView={{ opacity:1 }} 
+        transition={{duration:1}} 
+        animate={{x:[-100, 0]}} // ${dark ? 'bg-[#B6BBC4]' : ''}
         className={`
-        flex flex-row even:flex-row-reverse desktop:even:flex-row-reverse justify-between items-center space-x-4 rounded-xl ${dark ? 'bg-[#B6BBC4] text-black shadow-xl shadow-stone-700' : 'shadow-gray-400 shadow-3xl bg-white'}  w-full laptop:h-[350px] mb-10 p-4
+        flex flex-row even:flex-row-reverse desktop:even:flex-row-reverse justify-between items-center space-x-4 rounded-xl ${dark ? 'bg-[#B6BBC4] text-black shadow-xl shadow-stone-700' : 'shadow-gray-400 shadow-3xl bg-white'}  w-full h-[350px] laptop:h-[350px] p-4
         small:w-full small:flex small:flex-col small:bg-white-300 small:justify-between small:items-center small:m-4 small:p-2 small:space-x-0
-        mobile:flex mobile:even:flex-row-reverse mobile:even:flex-col mobile:flex-col mobile:bg-white-300 mobile:justify-between mobile:items-center mobile:m-0 mobile:p-2 mobile:space-x-0 mobile:w-full mobile:h-full
+        mobile:flex mobile:even:flex-col mobile:flex-col mobile:bg-white-300 mobile:justify-between mobile:items-center mobile:m-0 mobile:p-2 mobile:space-x-0 mobile:w-full mobile:h-full
         tablet:w-full tablet:flex tablet:flex-col tablet:bg-white-300 tablet:justify-between tablet:items-center tablet:m-2 tablet:p-4 tablet:space-x-0`}
         > 
             <ImageSliderDiv obj={obj} />

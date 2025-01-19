@@ -29,8 +29,9 @@ export const BounceAnimation = ({textStyle}) => {
 export const ImageSpan = () => {
     const {dark} = useContext(modeContext);
     return (
+        // For background color: backdrop-blur-sm backdrop-brightness-50
         <img 
-            className={`block mx-auto h-[250px] transition duration-700 rounded-full contrast-100 ${dark ? 'brightness-90' : 'brightness-100' }  backdrop-blur-sm backdrop-brightness-50`} 
+            className={`block mx-auto h-[250px] transition duration-700 rounded-full contrast-100 ${dark ? 'brightness-90' : 'brightness-100' }`} 
             src={mylogo}
             alt="MyLogo not loaded"
         />

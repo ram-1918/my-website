@@ -21,12 +21,12 @@ import { motion } from 'framer-motion';
             style={{backgroundColor: dark ? "#B6BBC4" : "", color: dark ? "bg-gray-900" : ""}} 
             className={`
                 ${dark ? 'desktop:rounded-full mobile:rounded tablet:rounded shadow-2xl shadow-gray-500' : ''}
-                py-2 px-2 w-[90%] flex flex-row justify-start items-center space-x-10
+                py-2 px-2 w-[90%] flex flex-row justify-center items-center
                 small:w-full small:space-x-0 small:flex-col small:bg-white-200 small:p-2
                 mobile:flex mobile:flex-col mobile:justify-start mobile:items-center mobile:space-y-5 space-x-0
                 tablet:overflow-x-scroll`}
                 >
-                <IconsHeader dark={dark} />
+                {/* <IconsHeader dark={dark} /> */}
                 <IconsDiv />
             </motion.div>
         </div>

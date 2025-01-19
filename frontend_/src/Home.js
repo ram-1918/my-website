@@ -8,6 +8,7 @@ import Academic from "./sections/section4/Academic";
 import Projects from "./sections/section3/Projects";
 import Achievements from "./sections/section5/Achievements";
 import Footer from "./sections/section6/Footer";
+import { BaseBackground } from "./components/Base/BaseBackground";
 
 // import FooterDiv from "./sections/section6/FooterDiv";
 
@@ -58,6 +59,7 @@ function Home() {
       <Outlet />
       <modeContext.Provider value={props}>
         <div className={`${bg} w-full h-full flex flex-col font-[sans-serif] transition-all`} >
+          <BaseBackground />
           <Topnav />
           <AboutDiv />
           <Projects />
