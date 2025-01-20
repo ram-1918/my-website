@@ -17,7 +17,10 @@ module.exports = {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
       dance: ['Dancing Script', 'cursive'],
-      kranky: ['Kranky', 'serif']
+      kranky: ['Kranky', 'serif'],
+      russo: ["Russo One", "serif"],
+      erica: ["Erica One", "serif"],
+      pinyon: ["Pinyon Script", "serif"]
     },
     extend: {
       spacing: {

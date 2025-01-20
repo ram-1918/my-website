@@ -12,11 +12,11 @@ const Logo = ({logo}) => (
 
 const DescriptionHeader = ({type, role}) => (
     <span 
-    className={`w-full mobile:text-[0.85rem] font-light text-zinc-200`}
+    className={`w-full mobile:text-[0.85rem] font-light`}
     >
         <FontAwesomeIcon 
         icon={type==='exp' ? faUserCircle : faGraduationCap} 
-        className={`px-1 text-zinc-200`} />
+        className={`px-1`} />
             {role}
         </span>
 );
@@ -26,7 +26,7 @@ const InformationBlock = ({title, text, obj, obj:{type, role}}) => {
     return (
         <div 
         className={
-            `${title === 'Education' ? 'bg-slate-700' : 'bg-cyan-800'} flex flex-row justify-start items-center space-x-2 
+            `${title === 'Education' ? 'bg-purple-100' : 'bg-purple-100'} flex flex-row justify-start items-center space-x-2 
             w-full h-fit py-2 px-1 leading-6 tracking-wide rounded-tr-xl rounded-tl-xl
             `}>
             <Logo logo={obj.logo} />
@@ -55,7 +55,7 @@ const FirstEmptyBlock = ({title, text, obj, obj:{responsibilities}}) => {
 
 const AcademicDiv = ({...props}) => {
     return (
-        <div className={`${props.title === 'Education' ? 'bg-slate-100' : 'bg-cyan-50'} w-full flex flex-col justify-center items-center space-y-4 z-20 shadow-xl rounded-xl`}>
+        <div className={`${props.title === 'Education' ? 'bg-purple-50' : 'bg-purple-50'} w-full flex flex-col justify-center items-center space-y-4 z-20 shadow-xl rounded-xl`}>
             <FirstEmptyBlock {...props} />
         </div>
     )
@@ -64,7 +64,7 @@ const AcademicDiv = ({...props}) => {
 
 const MobileView = ({data, text, title}) => {
     return (
-        <div className="desktop:hidden w-full h-full flex flex-col justify-start items-center space-y-10 p-2">
+        <div className="flex flex-col items-center justify-start w-full h-full p-2 space-y-10 desktop:hidden">
             {data.map((obj, idx) => { return <AcademicDiv key={idx} title={title} index={idx} text={text} obj={obj}  /> })}
         </div>
     )

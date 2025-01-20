@@ -12,7 +12,7 @@ export const BaseBackground = () => {
 };
 
 const MainText = () => (
-  <span className="font-extralight font-kranky text-purple-600 text-[10rem] z-0 opacity-50">
+  <span className="font-extralight font-russo bg-gradient-to-r from-black to-purple-600 text-transparent bg-clip-text text-[10rem] z-0 opacity-20">
     RAM CHANDRA
   </span>
 );

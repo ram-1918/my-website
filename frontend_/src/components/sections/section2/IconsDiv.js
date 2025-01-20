@@ -50,7 +50,7 @@ const IconsDiv = () => {
   // small:w-full small:bg-white-200 small:flex-wrap small:pl-0 small:ml-0 
   // mobile:grid mobile:grid-cols-4 mobile:gap-4 mobile:space-x-0
   return (
-    <div className="relative flex w-[50%] overflow-hidden bg-purple-50 rounded-xl shadow-lg py-2">
+    <div className="relative flex w-[70%] overflow-hidden bg-purple-50 rounded-xl shadow-lg py-2">
       <div className="absolute top-0 left-0 z-10 w-20 h-full bg-gradient-to-r from-gray-200 to-transparent"></div>
       <div className="absolute top-0 right-0 z-10 w-20 h-full bg-gradient-to-l from-gray-200 to-transparent"></div>
 

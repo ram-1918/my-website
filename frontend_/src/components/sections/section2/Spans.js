@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { modeContext } from "../../../Home";
 import mylogo from "../../../icons/me3.webp";
 
-export const ME = ({dark}) => <span className={`${dark ? "text-white" : ""} text-2xl font-dance`}>Ram Chandra</span>
+export const ME = () => <span className={`text-5xl bg-gradient-to-r from-purple-500 via-red-500 to-purple-500 bg-clip-text text-transparent font-dance`}>Ram Chandra</span>
 export const NormalSpanText = ({text}) => <span>{text}</span>;
 export const StyledSpanText = ({text, textTitle}) => (
     <span style={{ color: textTitle }} className="text-lg font-light">
@@ -10,8 +10,8 @@ export const StyledSpanText = ({text, textTitle}) => (
         {text} {" "}
     </span>
 );
-export const HiText = ({text, textStyle}) => (
-    <span style={{ color: textStyle }} className="text-[#27374D] text-[1.5rem] font-light">
+export const HiText = ({text}) => (
+    <span className="text-[#27374D] text-xl font-light font-dance">
         {text}
   </span>
 );

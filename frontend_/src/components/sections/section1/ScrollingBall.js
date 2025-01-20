@@ -58,7 +58,7 @@ export default function ScrollingBall({
     };
   }, [display, prevPos, setIsScrollDown, setOffset]);
 
-  const rollingClass = `text-right ${isScrolling} ${dark ? 'text-white' : 'text-black'}`;
+  const rollingClass = `text-right ${isScrolling} ${dark ? 'text-white' : 'text-purple-600'}`;
   return (
     <div
       style={{ backgroundColor: "inherit", width: "100%" }}
@@ -71,7 +71,7 @@ export default function ScrollingBall({
         className={`h-fit mt-0 text-right ${
           dark
             ? "border-b border-red-500"
-            : "border-b border-b-gray-400"
+            : "border-b border-b-purple-600"
         } transition-all transform ease-linear duration-1000`}
       >
       {dark ? <FontAwesomeIcon icon={faBasketball} className={rollingClass} /> : <FontAwesomeIcon icon={faSoccerBall} className={rollingClass} />}

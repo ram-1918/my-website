@@ -1,18 +1,11 @@
-import { useContext } from "react";
-import { modeContext } from "../../../Home";
+import { gradientStyle } from "../../Base/Header";
 
 const NameAsTitle = () => {
-  const {dark} = useContext(modeContext);
     return (
-      <div className="">
-        <span
-          className={`${
-            dark ? "text-[#9DB2BF]" : "text-[#27374D]"
-          } text-xl font-bold `}
-        >
-          Ram
+      <div className={`${gradientStyle} font-russo`}>
+        <span className={`text-xl font-light`}>
+          Ram Chandra
         </span>
-        <span className={`text-xl font-light ${dark ? 'text-gray-400' : 'text-black'} `}>Chandra</span>
       </div>
     );
   };

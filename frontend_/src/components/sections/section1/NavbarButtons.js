@@ -67,20 +67,16 @@ const NavButtons = () => {
   return (
     <div
       className={`
-      ${dark ? "text-white" : "text-black"}
-    flex flex-row justify-between items-center space-x-6 py-1
-    mobile:space-x-[10px] mobile:pt-2 mobile:w-full mobile:px-[10px] small:px-[5px] tablet:px-20`}
+        flex flex-row justify-between items-center space-x-6 py-1
+        mobile:space-x-[10px] mobile:pt-2 mobile:w-full mobile:px-[10px] small:px-[5px] tablet:px-20`}
     >
-      <span className="mobile:hidden tablet:hidden">
-        <ThemeButon />
-      </span>
       {navBarOptions.map((option, idx) => (
         <Option key={idx} {...option} />
       ))}
-      <span className="space-x-2 mobile:hidden tablet:hidden">
+      {/* <span className="space-x-2 mobile:hidden tablet:hidden">
         <ViewCountDisplay count={totalViews} />
         <ResumeDownload />
-      </span>
+      </span> */}
     </div>
   );
 };
