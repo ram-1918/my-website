@@ -1,8 +1,6 @@
-import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
-// import { SliderData } from './SliderData';
-// import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
+import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
 
 const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -21,21 +19,33 @@ const ImageSlider = ({ slides }) => {
   }
 
   return (
-    <section className='relative flex flex-col items-center justify-center group/image'>
+    <section className="relative flex flex-col items-center justify-center group/image">
       {slides.map((slide, index) => {
         return (
           <div
-            className={`${index === current ? 'opacity-1' : 'opacity-0'} transition duration-700 ease-in-out w-full h-full`}
+            className={`${
+              index === current ? "opacity-1" : "opacity-0"
+            } transition duration-700 ease-in-out w-full h-full`}
             key={index}
           >
             {index === current && (
-              <img src={slide} alt='travel' className='w-[100%] h-[100%]' ></img>
+              <img src={slide} alt="travel" className="w-[100%] h-[100%]"></img>
             )}
           </div>
         );
       })}
-        <button className='invisible group-hover/image:visible absolute top-[50%] left-[1%] text-lg font-bold bg-opacity-80 bg-gray-300 p-[5px]' onClick={prevSlide}><FontAwesomeIcon icon={faCaretLeft} /></button>
-        <button className='invisible group-hover/image:visible absolute top-[50%] right-[1%] text-lg font-bold bg-opacity-80 bg-gray-300 p-[5px]' onClick={nextSlide}><FontAwesomeIcon icon={faCaretRight} /></button>
+      <button
+        className="invisible group-hover/image:visible absolute top-[50%] left-[1%] text-lg font-bold bg-opacity-80 bg-gray-300 p-[5px]"
+        onClick={prevSlide}
+      >
+        <FontAwesomeIcon icon={faCaretLeft} />
+      </button>
+      <button
+        className="invisible group-hover/image:visible absolute top-[50%] right-[1%] text-lg font-bold bg-opacity-80 bg-gray-300 p-[5px]"
+        onClick={nextSlide}
+      >
+        <FontAwesomeIcon icon={faCaretRight} />
+      </button>
     </section>
   );
 };

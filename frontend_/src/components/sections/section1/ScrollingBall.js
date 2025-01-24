@@ -4,11 +4,7 @@ import { modeContext } from "../../../Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBasketball, faSoccerBall } from "@fortawesome/free-solid-svg-icons";
 
-export default function ScrollingBall({
-  setOffset,
-  prevPos,
-  display
-}) {
+export default function ScrollingBall({ setOffset, prevPos, display }) {
   let currScrollPos = window.scrollY - document.documentElement.clientHeight;
   let totalScrollHeight =
     document.body.offsetHeight - document.documentElement.clientHeight;
@@ -17,11 +13,11 @@ export default function ScrollingBall({
   let percentScrolled = Math.floor(
     ((totalScrollHeight - currScrollPos) / totalScrollHeight) * 100
   );
-  
+
   let widthScrollPercent = 99.5 + fraction - percentScrolled + "%";
-  const {setIsScrollDown} = useContext(modeContext);
+  const { setIsScrollDown } = useContext(modeContext);
   const [isScrolling, setIsScrolling] = useState("");
-  const {dark} = useContext(modeContext);
+  const { dark } = useContext(modeContext);
 
   useEffect(() => {
     let timeoutId;
@@ -58,7 +54,9 @@ export default function ScrollingBall({
     };
   }, [display, prevPos, setIsScrollDown, setOffset]);
 
-  const rollingClass = `text-right ${isScrolling} ${dark ? 'text-white' : 'text-purple-600'}`;
+  const rollingClass = `text-right ${isScrolling} ${
+    dark ? "text-white" : "text-purple-600"
+  }`;
   return (
     <div
       style={{ backgroundColor: "inherit", width: "100%" }}
@@ -69,12 +67,14 @@ export default function ScrollingBall({
         transition={{ duration: 3 }}
         style={{ width: widthScrollPercent }}
         className={`h-fit mt-0 text-right ${
-          dark
-            ? "border-b border-red-500"
-            : "border-b border-b-purple-600"
+          dark ? "border-b border-red-500" : "border-b border-b-purple-600"
         } transition-all transform ease-linear duration-1000`}
       >
-      {dark ? <FontAwesomeIcon icon={faBasketball} className={rollingClass} /> : <FontAwesomeIcon icon={faSoccerBall} className={rollingClass} />}
+        {dark ? (
+          <FontAwesomeIcon icon={faBasketball} className={rollingClass} />
+        ) : (
+          <FontAwesomeIcon icon={faSoccerBall} className={rollingClass} />
+        )}
       </motion.div>
     </div>
   );
