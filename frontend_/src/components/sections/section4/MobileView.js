@@ -82,7 +82,7 @@ const AcademicDiv = ({ ...props }) => {
 
 const MobileView = ({ data, text, title }) => {
   return (
-    <div className="flex flex-col items-center justify-start w-full h-full p-2 space-y-10 laptop:hidden desktop:hidden tablet:hidden">
+    <div className="flex flex-col items-center justify-start w-full h-full p-2 space-y-10 monitor:hidden desktop:hidden laptop:hidden tablet:hidden">
       {data.map((obj, idx) => {
         return (
           <AcademicDiv
